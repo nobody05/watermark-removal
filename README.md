@@ -40,20 +40,35 @@ And you're all Set!!
 
       !python main.py --image path-to-input-image --output path-to-output-image --checkpoint_dir model/ --watermark_type istock
 
-## Citing
+##
+##
+##
+## --------------------下面是我自己的安装步骤-------------------------------
+- 安装python3.7
 
-```
-@article{yu2018generative,
-  title={Generative Image Inpainting with Contextual Attention},
-  author={Yu, Jiahui and Lin, Zhe and Yang, Jimei and Shen, Xiaohui and Lu, Xin and Huang, Thomas S},
-  journal={arXiv preprint arXiv:1801.07892},
-  year={2018}
-}
+  wget https://www.python.org/ftp/python/3.7.14/Python-3.7.14.tgz
 
-@article{yu2018free,
-  title={Free-Form Image Inpainting with Gated Convolution},
-  author={Yu, Jiahui and Lin, Zhe and Yang, Jimei and Shen, Xiaohui and Lu, Xin and Huang, Thomas S},
-  journal={arXiv preprint arXiv:1806.03589},
-  year={2018}
-}
-```
+
+  ./configure --prefix=/usr/local/python3.7
+
+  make && make install
+
+
+- 安装项目依赖
+
+  pip3.7 install Pillow
+  pip3.7 install scikit-build
+  pip3.7 install opencv-python
+  pip3.7 install git+https://github.com/JiahuiYu/neuralgym
+  pip3.7 install pyyaml
+  pip3.7 install tensorflow==1.15.0
+
+- 下载model文件
+
+  wget https://drive.google.com/drive/folders/1xRV4EdjJuAfsX9pQme6XeoFznKXG0ptJ
+  复制到model/下面
+
+
+- 开始执行
+
+  python3.7 main.py --image 140278030-d2a962ce-3722-43f1-b1bd-0ffde2aa7026.jpeg --output output/140278030-d2a962ce-3722-43f1-b1bd-0ffde2aa7026_removal.jpeg --checkpoint_dir model/ --watermark_type istock
