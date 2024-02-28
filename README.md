@@ -44,31 +44,37 @@ And you're all Set!!
 ##
 ##
 ## --------------------下面是我自己的安装步骤-------------------------------
+### 主要问题在于tensorflow1.15.0 必须要使用python3.7.x 才可以，我测试发现python3.6都不能成功
+### 而python3.10.x都只能安装tensorflow2.x了
 - 安装python3.7
-
+  ```shell
   wget https://www.python.org/ftp/python/3.7.14/Python-3.7.14.tgz
 
 
   ./configure --prefix=/usr/local/python3.7
 
   make && make install
+  ```
 
 
 - 安装项目依赖
-
+  ```shell
   pip3.7 install Pillow
   pip3.7 install scikit-build
   pip3.7 install opencv-python
   pip3.7 install git+https://github.com/JiahuiYu/neuralgym
   pip3.7 install pyyaml
   pip3.7 install tensorflow==1.15.0
+  ```
 
 - 下载model文件
-
+  ```shell
   wget https://drive.google.com/drive/folders/1xRV4EdjJuAfsX9pQme6XeoFznKXG0ptJ
   复制到model/下面
+  ```
 
 
 - 开始执行
-
+  ```shell
   python3.7 main.py --image 140278030-d2a962ce-3722-43f1-b1bd-0ffde2aa7026.jpeg --output output/140278030-d2a962ce-3722-43f1-b1bd-0ffde2aa7026_removal.jpeg --checkpoint_dir model/ --watermark_type istock
+  ```
